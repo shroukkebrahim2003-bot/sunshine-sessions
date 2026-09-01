@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سيشن تجريبية — Introduction to Programming</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title> سيشن تجريبية — Introduction to Programming 🤖💻</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4A90E2;
-            --secondary-color: #50E3C2;
-            --accent-color: #F5A623;
-            --bg-color: #F9FAFB;
-            --text-color: #333333;
-            --card-bg: #FFFFFF;
-            --border-radius: 12px;
+            --color-1: #FF6B9D;
+            --color-2: #4ECDC4;
+            --color-3: #FFD93D;
+            --color-4: #6C5CE7;
+            --color-5: #FF8C42;
+            --color-6: #06D6A0;
+            --color-7: #118AB2;
+            --color-8: #EF476F;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         * {
@@ -24,32 +26,56 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
+            background: #f0f4ff;
+            color: #2d3748;
+            line-height: 1.9;
             direction: rtl;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             padding: 20px;
         }
 
+        /* Header */
         header {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 50px 20px;
+            background: var(--bg-gradient);
             color: white;
-            border-radius: var(--border-radius);
+            border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "🤖 🧩  💻 🎮";
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            letter-spacing: 10px;
+        }
+
+        header::after {
+            content: " 🌟 🔢 🎯 🧠";
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            letter-spacing: 10px;
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
-            font-weight: 800;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .meta-info {
@@ -62,25 +88,28 @@
 
         .meta-badge {
             background: rgba(255,255,255,0.25);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255,255,255,0.4);
+            font-size: 1.1rem;
         }
 
+        /* Goal Section */
         .goal-section {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe0ec 100%);
+            padding: 30px;
+            border-radius: 20px;
             margin-bottom: 30px;
-            border-right: 5px solid var(--accent-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-right: 6px solid var(--color-1);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.15);
         }
 
         .goal-section h2 {
-            color: var(--primary-color);
+            color: var(--color-1);
             margin-bottom: 15px;
+            font-size: 1.6rem;
         }
 
         .goal-section ul {
@@ -89,83 +118,137 @@
         }
 
         .goal-section li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             position: relative;
-            padding-right: 30px;
+            padding-right: 35px;
             font-weight: 600;
+            font-size: 1.05rem;
         }
 
         .goal-section li::before {
-            content: "💡";
+            content: "✨";
             position: absolute;
             right: 0;
+            font-size: 1.2rem;
         }
 
+        /* Session Blocks */
         .session-block {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: var(--border-radius);
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
             margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid;
+            position: relative;
         }
 
         .session-block:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
         }
+
+        /* Different colors for each block */
+        .block-1 { border-top-color: var(--color-2); }
+        .block-2 { border-top-color: var(--color-3); }
+        .block-3 { border-top-color: var(--color-4); }
+        .block-4 { border-top-color: var(--color-5); }
+        .block-5 { border-top-color: var(--color-6); }
+        .block-6 { border-top-color: var(--color-7); }
+        .block-7 { border-top-color: var(--color-8); }
+        .block-8 { border-top-color: var(--color-1); }
 
         .session-header {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 3px dashed #e2e8f0;
+            padding-bottom: 15px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
 
         .session-number {
-            background: var(--primary-color);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-weight: 900;
+            font-size: 1.5rem;
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
+        .block-1 .session-number { background: var(--color-2); }
+        .block-2 .session-number { background: var(--color-3); color: #333; }
+        .block-3 .session-number { background: var(--color-4); }
+        .block-4 .session-number { background: var(--color-5); }
+        .block-5 .session-number { background: var(--color-6); }
+        .block-6 .session-number { background: var(--color-7); }
+        .block-7 .session-number { background: var(--color-8); }
+        .block-8 .session-number { background: var(--color-1); }
+
         .session-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 800;
             flex-grow: 1;
         }
 
+        .block-1 .session-title { color: var(--color-2); }
+        .block-2 .session-title { color: var(--color-3); }
+        .block-3 .session-title { color: var(--color-4); }
+        .block-4 .session-title { color: var(--color-5); }
+        .block-5 .session-title { color: var(--color-6); }
+        .block-6 .session-title { color: var(--color-7); }
+        .block-7 .session-title { color: var(--color-8); }
+        .block-8 .session-title { color: var(--color-1); }
+
         .session-time {
-            background: #E3F2FD;
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.85rem;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 700;
+            color: white;
         }
 
+        .block-1 .session-time { background: var(--color-2); }
+        .block-2 .session-time { background: var(--color-3); color: #333; }
+        .block-3 .session-time { background: var(--color-4); }
+        .block-4 .session-time { background: var(--color-5); }
+        .block-5 .session-time { background: var(--color-6); }
+        .block-6 .session-time { background: var(--color-7); }
+        .block-7 .session-time { background: var(--color-8); }
+        .block-8 .session-time { background: var(--color-1); }
+
         .activity-box {
-            background: #F0F9FF;
-            border: 1px solid #BAE6FD;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            border: 2px solid #c7d2fe;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .activity-box::before {
+            content: "💡";
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 2rem;
+            background: white;
+            padding: 0 10px;
+            border-radius: 50%;
         }
 
         .activity-box h4 {
-            color: #0369A1;
+            color: var(--color-4);
             margin-bottom: 10px;
+            margin-top: 10px;
+            font-size: 1.2rem;
         }
 
         .example-list {
@@ -174,279 +257,475 @@
         }
 
         .example-list li {
-            background: #F8FAFC;
-            margin: 6px 0;
-            padding: 10px 15px;
-            border-radius: 6px;
-            border-right: 4px solid var(--secondary-color);
-            font-weight: 500;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            margin: 8px 0;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-right: 5px solid var(--color-2);
+            font-weight: 600;
+            font-size: 1.05rem;
         }
 
         .highlight {
-            background: #FEF3C7;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 700;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-weight: 800;
             color: #92400E;
+            display: inline-block;
         }
 
-        .final-notes {
-            background: linear-gradient(135deg, #10B981, #34D399);
+        .warning-box {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border: 2px solid #fca5a5;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: "🚨";
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 2rem;
+            background: white;
+            padding: 0 10px;
+            border-radius: 50%;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #86efac;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .success-box::before {
+            content: "✅";
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 2rem;
+            background: white;
+            padding: 0 10px;
+            border-radius: 50%;
+        }
+
+        .robot-mission {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border: 2px solid #d8b4fe;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .maze-challenge {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 2px solid #fcd34d;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .final-section {
+            background: linear-gradient(135deg, #10B981, #34D399, #6EE7B7);
             color: white;
-            padding: 30px;
-            border-radius: var(--border-radius);
+            padding: 40px;
+            border-radius: 20px;
             margin-top: 40px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        .final-notes h2 {
+        .final-section::before {
+            content: "⭐  🌟 🎯 ⭐";
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            opacity: 0.5;
+            letter-spacing: 20px;
+        }
+
+        .final-section h2 {
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            margin-top: 20px;
         }
 
-        .next-steps {
+        .final-goals {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            margin-top: 25px;
+            margin: 25px 0;
         }
 
-        .step-card {
-            background: rgba(255,255,255,0.2);
-            padding: 15px 20px;
-            border-radius: 8px;
+        .goal-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 12px 20px;
+            border-radius: 15px;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255,255,255,0.4);
             font-weight: 700;
-            min-width: 220px;
+            font-size: 1.1rem;
+        }
+
+        .review-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid #f59e0b;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .review-section h3 {
+            color: #92400e;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .review-section li {
+            background: white;
+            margin: 10px 0;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-right: 5px solid #f59e0b;
+            font-weight: 700;
+            color: #92400e;
         }
 
         footer {
             text-align: center;
             padding: 30px;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 40px;
-            border-top: 1px solid #e5e7eb;
+            border-top: 3px dashed #e5e7eb;
+        }
+
+        .emoji-big {
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            margin: 10px 0;
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 1.6rem; }
+            header h1 { font-size: 1.8rem; }
             .session-header { flex-direction: column; align-items: flex-start; }
             .session-time { margin-top: 5px; }
+            .session-block { padding: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🎓 سيشن تجريبية — Introduction to Programming</h1>
+            <h1> سيشن تجريبية — Introduction to Programming 🤖💻</h1>
             <div class="meta-info">
-                <span class="meta-badge">👧👦 السن: 4–9 سنوات</span>
-                <span class="meta-badge">⏱️ المدة: ساعة ونصف</span>
+                <span class="meta-badge">👧👦 السن: 4–14 سنة</span>
+                <span class="meta-badge">⏱️ المدة: ساعة واحدة</span>
             </div>
         </header>
 
         <div class="goal-section">
             <h2>🎯 الهدف:</h2>
-            <p>الطفل يخرج فاهم بشكل بسيط:</p>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;">الطفل يخرج من السيشن فاهم بشكل بسيط:</p>
             <ul>
-                <li>يعني إيه Computer؟</li>
-                <li>يعني إيه Hardware؟</li>
-                <li>يعني إيه Software؟</li>
                 <li>يعني إيه Programming؟</li>
                 <li>يعني إيه Instructions / Commands؟</li>
-                <li>إن الكمبيوتر بينفذ الأوامر اللي إحنا بنديهاله.</li>
+                <li>إننا لازم ندي أوامر واضحة للروبوت عشان ينفذ المهمة.</li>
+                <li>إن ترتيب الأوامر مهم.</li>
+                <li>إننا نقدر نخطط للحل ونجربه ونكتشف أخطاءنا ونعدلها.</li>
+                <li>إن دي هي الفكرة الأساسية للبرمجة.</li>
             </ul>
         </div>
 
         <!-- القسم 1 -->
-        <div class="session-block">
+        <div class="session-block block-1">
             <div class="session-header">
                 <div class="session-number">1</div>
-                <div class="session-title">أول 10 دقايق — تعارف وفتح الموضوع 💻</div>
+                <div class="session-title">أول 10 دقايق — تعارف وفتح الموضوع 👋💻</div>
                 <div class="session-time">10 دقايق</div>
             </div>
-            <p><strong>اسألي الأطفال:</strong></p>
+            <p style="font-size: 1.1rem;"><strong>ابدئي بالتعارف مع الأطفال واسأليهم:</strong></p>
             <ul class="example-list">
-                <li>"مين بيستخدم الكمبيوتر؟"</li>
-                <li>"بتستخدموه في إيه؟"</li>
+                <li>"اسمك إيه؟"</li>
+                <li>"مين بيستخدم الكمبيوتر أو الموبايل؟"</li>
                 <li>"مين بيحب الألعاب؟ 🎮"</li>
                 <li>"مين نفسه يعمل لعبة بنفسه؟"</li>
             </ul>
             <div class="activity-box">
-                <p><strong>وبعدين قولي:</strong><br>
-                "النهارده هنكتشف الكمبيوتر بيفهمنا إزاي، وإزاي نقدر نخليه يعمل اللي إحنا عايزينه."</p>
+                <p style="font-size: 1.1rem;"><strong>وبعدين قولي لهم:</strong><br>
+                "النهارده مش هنقعد نتفرج ونسمع بس...<br>
+                <strong>النهارده إحنا هنلعب لعبة، وهنتحول لمبرمجين!"</strong></p>
             </div>
+            <p style="font-size: 1.1rem;"><strong>واسأليهم:</strong> "تفتكروا يعني إيه Programmer؟"</p>
+            <p>خليهم يقولوا أفكارهم حتى لو الإجابات مختلفة.</p>
         </div>
 
         <!-- القسم 2 -->
-        <div class="session-block">
+        <div class="session-block block-2">
             <div class="session-header">
                 <div class="session-number">2</div>
-                <div class="session-title">من 10–20 دقيقة — Hardware vs Software</div>
+                <div class="session-title">من 10–20 دقيقة — Robot Mission 🤖🎮</div>
                 <div class="session-time">10 دقايق</div>
             </div>
-            <p><strong>اعملي لعبة حركة:</strong></p>
-            <p>قولي: "أنا هقول حاجة، لو هي حاجة نقدر نمسكها → نروح ناحية اليمين. ولو برنامج → نروح ناحية الشمال."</p>
+            <p style="font-size: 1.1rem;"><strong>هنا هنبدأ أول لعبة.</strong></p>
+            <p>اختاري طفل يكون <strong>Robot 🤖</strong> وطفل تاني يكون <strong>Programmer 👩‍💻</strong></p>
             <div class="activity-box">
-                <h4>أمثلة:</h4>
+                <p><strong>قولي للـ Programmer:</strong></p>
                 <ul class="example-list">
-                    <li>🖱️ Mouse → <span class="highlight">Hardware</span></li>
-                    <li>⌨️ Keyboard → <span class="highlight">Hardware</span></li>
-                    <li>🖥️ Screen → <span class="highlight">Hardware</span></li>
-                    <li>🎮 Game → <span class="highlight">Software</span></li>
-                    <li>🎨 Drawing App → <span class="highlight">Software</span></li>
-                    <li>🧮 Calculator App → <span class="highlight">Software</span></li>
+                    <li>"إنت دلوقتي مسؤول عن الروبوت."</li>
+                    <li>"عايز تخليه يوصل لمكان معين."</li>
                 </ul>
             </div>
-            <p><strong>بعد اللعبة قولي:</strong></p>
-            <ul class="example-list">
-                <li><strong>Hardware</strong> = الحاجات اللي نقدر نمسكها.</li>
-                <li><strong>Software</strong> = البرامج اللي بتشتغل على الكمبيوتر.</li>
-            </ul>
+            <div class="warning-box">
+                <p style="font-size: 1.1rem;"><strong>لكن فيه قاعدة مهمة جدًا:</strong></p>
+                <p>🚨 ممنوع تقول للروبوت: <strong>"روح هناك."</strong></p>
+                <p>لازم تديله أوامر واضحة.</p>
+            </div>
+            <div class="robot-mission">
+                <h4 style="color: var(--color-4); margin-bottom: 10px;">مثلاً:</h4>
+                <ul class="example-list">
+                    <li>➡️ خطوة لقدام</li>
+                    <li>➡️ خطوة لقدام</li>
+                    <li>↩️ لف</li>
+                    <li>➡️ خطوة</li>
+                    <li>🛑 Stop</li>
+                </ul>
+            </div>
+            <p>خلي الـ Robot ينفذ الأوامر.</p>
+            <p>ولو الـ Programmer قال أمر مش واضح، أو أمر يخلي الروبوت يروح في مكان غلط، خليه ينفذه زي ما اتقال له.</p>
+            <div class="activity-box">
+                <p><strong>وبعدين اسألي الأطفال:</strong></p>
+                <ul class="example-list">
+                    <li>"إيه اللي حصل؟"</li>
+                    <li>"ليه الروبوت عمل كده؟"</li>
+                    <li>"هل الروبوت كان بيعرف إحنا عايزين منه إيه لوحده؟"</li>
+                </ul>
+            </div>
         </div>
 
         <!-- القسم 3 -->
-        <div class="session-block">
+        <div class="session-block block-3">
             <div class="session-header">
                 <div class="session-number">3</div>
-                <div class="session-title">من 20–35 دقيقة — لعبة الـ Robot 🤖</div>
-                <div class="session-time">15 دقيقة</div>
+                <div class="session-title">من 20–30 دقيقة — يعني إيه Programming؟ 🤖</div>
+                <div class="session-time">10 دقايق</div>
             </div>
-            <p>اختاري طفل يكون <strong>Robot</strong> وطفل يكون <strong>Programmer</strong>.</p>
+            <p style="font-size: 1.1rem;"><strong>بعد ما يخلصوا اللعبة اسأليهم:</strong> "طب أنا عملت إيه دلوقتي؟"</p>
+            <p>خليهم يفكروا ويجاوبوا.</p>
             <div class="activity-box">
-                <p><strong>قولي للـ Programmer:</strong><br>
-                "ممنوع تقول للـ Robot: روح هناك. لازم تديله أوامر واضحة."</p>
-                <p><strong>مثلاً:</strong><br>
-                ➡️ خطوة لقدام<br>
-                ➡️ خطوة لقدام<br>
-                ↩️ لف يمين<br>
-                ➡️ خطوة<br>
-                🛑 Stop</p>
+                <p><strong>وبعدين قولي:</strong></p>
+                <p>"أنا كنت عايزة أخلي الروبوت يعمل مهمة معينة، فبدأت أديه أوامر."</p>
+                <p>"الأوامر دي لازم تكون واضحة، عشان الروبوت يعرف يعمل إيه."</p>
             </div>
-            <p>لو الأمر مش واضح، الـ Robot ما ينفذش.</p>
-            <p><strong>بعدها قولي:</strong> "شايفين؟ الكمبيوتر مش بيخمن إحنا عايزين إيه. لازم نديله Instructions واضحة."</p>
-            <p><strong>وهنا عرفيهم:</strong> <span class="highlight">Programming</span> = إننا بندي الكمبيوتر أوامر عشان يعمل حاجة معينة.</p>
+            <div class="success-box">
+                <h3 style="color: var(--color-4); margin-bottom: 10px;">🧠 Programming</h3>
+                <p style="font-size: 1.15rem;"><strong>"البرمجة ببساطة هي إننا بندي الكمبيوتر أو الروبوت مجموعة من الأوامر عشان ينفذ مهمة معينة."</strong></p>
+            </div>
+            <p style="font-size: 1.1rem;"><strong>وقولي لهم:</strong></p>
+            <p>"يعني إحنا كمبرمجين بنقول للكمبيوتر يعمل إيه، وهو بينفذ الأوامر اللي إحنا بنديهاله."</p>
         </div>
 
         <!-- القسم 4 -->
-        <div class="session-block">
+        <div class="session-block block-4">
             <div class="session-header">
                 <div class="session-number">4</div>
-                <div class="session-title">من 35–45 دقيقة — Sequence 🔢</div>
+                <div class="session-title">من 30–40 دقيقة — كل اتنين يعملوا Robot Mission 👥🤖</div>
                 <div class="session-time">10 دقايق</div>
             </div>
-            <p><strong>اعملي نشاط ترتيب.</strong></p>
-            <div class="activity-box">
-                <p>مثلاً صور: 🍎 → 🥣 → 🥛 → 🍽️</p>
-                <p><strong>واسألي:</strong> "مين يرتب الخطوات بالترتيب الصح؟"</p>
+            <p style="font-size: 1.1rem;"><strong>دلوقتي كل طفلين يشتغلوا مع بعض.</strong></p>
+            <div class="robot-mission">
+                <p>👦 <strong>الطفل الأول = Robot 🤖</strong></p>
+                <p>👧 <strong>الطفل الثاني = Programmer 👩‍💻</strong></p>
             </div>
-            <p><strong>وبعدين قولي:</strong> "في البرمجة ترتيب الأوامر مهم جدًا. لو غيرنا الترتيب، ممكن النتيجة تطلع غلط."</p>
-            <p>ودي اسمها: <span class="highlight">Sequence</span> = ترتيب الأوامر.</p>
+            <div class="activity-box">
+                <h4>مهمة الـ Programmer:</h4>
+                <p>يرسم أو يحدد الطريق اللي عايز الروبوت يمشي فيه، وبعد كده يديه الأوامر بالترتيب.</p>
+                <h4>مهمة الـ Robot:</h4>
+                <p>ينفذ الأوامر بالضبط.</p>
+            </div>
+            <p style="font-size: 1.1rem;"><strong>وبعد ما يخلصوا، يبدلوا الأدوار.</strong></p>
+            <p>🔄 Programmer → Robot<br>🔄 Robot → Programmer</p>
+            <div class="success-box">
+                <h4 style="color: #065f46; margin-bottom: 10px;">وهنا ركزي على إن الطفل:</h4>
+                <ul class="example-list">
+                    <li>✅ يفكر في الحل الأول.</li>
+                    <li>✅ يحدد الأوامر.</li>
+                    <li>✅ يجرب.</li>
+                    <li>✅ يلاحظ النتيجة.</li>
+                    <li>✅ لو حصل خطأ، يعدل الأوامر ويجرب تاني.</li>
+                </ul>
+            </div>
         </div>
 
         <!-- القسم 5 -->
-        <div class="session-block">
+        <div class="session-block block-5">
             <div class="session-header">
                 <div class="session-number">5</div>
-                <div class="session-title">من 45–55 دقيقة — ننتقل للكمبيوتر 💻</div>
+                <div class="session-title">من 40–50 دقيقة — Sequence 🔢</div>
                 <div class="session-time">10 دقايق</div>
             </div>
+            <p style="font-size: 1.1rem;"><strong>بعد النشاط اسأليهم:</strong> "هل ينفع أقول الأوامر بأي ترتيب؟"</p>
             <div class="activity-box">
-                <p><strong>قولي:</strong> "طيب بدل ما أنا أكون الـ Robot... خلينا نخلي الكمبيوتر هو الـ Robot!"</p>
+                <p>مثلاً: لو أنا عايزة أعمل حاجة معينة، هل ينفع أبدأ بالخطوة الأخيرة؟ 🤔</p>
             </div>
-            <p>افتحي <strong>Code.org</strong>.</p>
-            <p>وريهم الـ Blocks وقولي: "كل Block هنا عبارة عن أمر."</p>
-            <p>اختاري Challenge بسيط جدًا.</p>
-            <p>قبل ما تحطي الـ Blocks اسأليهم: "الشخصية محتاجة تعمل إيه عشان توصل؟"</p>
-            <p>خلي الأطفال يقولوا الأوامر الأول. وبعدين حطي الـ Blocks وشغليها.</p>
+            <p style="font-size: 1.1rem;"><strong>قولي لهم:</strong></p>
+            <ul class="example-list">
+                <li>"في البرمجة ترتيب الأوامر مهم جدًا."</li>
+                <li>"لو غيرنا ترتيب الأوامر، ممكن الروبوت يعمل حاجة مختلفة أو ما يوصلش للهدف."</li>
+            </ul>
+            <div class="success-box">
+                <h3 style="color: var(--color-6); margin-bottom: 10px;">🔢 Sequence</h3>
+                <p style="font-size: 1.15rem;"><strong>يعني: "ترتيب الأوامر والخطوات بالترتيب الصحيح."</strong></p>
+            </div>
         </div>
 
         <!-- القسم 6 -->
-        <div class="session-block">
+        <div class="session-block block-6">
             <div class="session-header">
                 <div class="session-number">6</div>
-                <div class="session-title">من 55–75 دقيقة — Code.org Activity 🎮</div>
-                <div class="session-time">20 دقيقة</div>
+                <div class="session-title">من 50–55 دقيقة — Maze Challenge 🧩</div>
+                <div class="session-time">5 دقايق</div>
             </div>
-            <p>خلي كل طفل يجرب أول مراحل بسيطة. ما تشرحيش كل حاجة مرة واحدة.</p>
+            <p style="font-size: 1.1rem;"><strong>دلوقتي هنطبق كل اللي اتعلمناه في لعبة المتاهات.</strong></p>
             <div class="activity-box">
-                <h4>كل Challenge:</h4>
-                <ol style="padding-right: 20px; line-height: 2;">
-                    <li>خلي الطفل يشوف المطلوب.</li>
-                    <li>اسأليه: "إحنا محتاجين نعمل إيه؟"</li>
-                    <li>خليه يقترح الأوامر.</li>
-                    <li>ساعديه يحط الـ Blocks.</li>
-                    <li>شغّلوا الحل.</li>
-                    <li>اسأليه: "إيه اللي حصل؟ وليه؟"</li>
+                <p><strong>قولي لهم:</strong></p>
+                <p>"فاكرين لما كنا بنساعد الروبوت يوصل للمكان اللي عايزينه؟"</p>
+                <p>"دلوقتي الروبوت قدامه تحدي أصعب!"</p>
+            </div>
+            <p>وزعي عليهم صور المتاهات.</p>
+            <div class="maze-challenge">
+                <h4 style="color: #92400e; margin-bottom: 10px;">🎯 المطلوب:</h4>
+                <p>الروبوت 🤖 لازم يوصل للهدف ⭐</p>
+                <p style="margin-top: 10px;"><strong>لكن لازم الطفل:</strong></p>
+                <ol style="padding-right: 20px; line-height: 2; font-weight: 600;">
+                    <li>1️ يفكر في الطريق.</li>
+                    <li>2️⃣ يحدد الأوامر.</li>
+                    <li>3️⃣ يرتب الأوامر.</li>
+                    <li>4️⃣ يجرب الحل.</li>
+                    <li>5️ لو الحل مش صحيح، يرجع يعدله.</li>
                 </ol>
             </div>
-            <p><strong>ركزي على:</strong> ➡️ Sequence | ➡️ Commands | ➡️ Problem Solving</p>
+
+            <div class="maze-challenge">
+                <h4 style="color: #92400e;">🧩 Maze Challenge 1</h4>
+                <p>ابدئي بالمتاهة الأسهل.</p>
+                <p><strong>قولي:</strong> "مين يقدر يساعد الروبوت يوصل للنجمة؟ ⭐"</p>
+                <p>خلي الأطفال يحاولوا يحلوا لوحدهم.</p>
+            </div>
+
+            <div class="maze-challenge">
+                <h4 style="color: #92400e;">🧩 Maze Challenge 2</h4>
+                <p>بعد ما يخلصوا الأولى:</p>
+                <p><strong>"حلو جدًا! طب مين يقدر يحل دي؟ "</strong></p>
+                <p>خلي المتاهة أصعب شوية.</p>
+            </div>
+
+            <div class="maze-challenge">
+                <h4 style="color: #92400e;">🧩 Maze Challenge 3</h4>
+                <p>هنا زودي مستوى التفكير.</p>
+                <p><strong>قولي:</strong></p>
+                <ul class="example-list">
+                    <li>"قبل ما نبدأ، فكروا في الطريق الأول."</li>
+                    <li>"ماتبدأوش تحطوا الأوامر عشوائي."</li>
+                </ul>
+            </div>
+
+            <div class="maze-challenge">
+                <h4 style="color: #92400e;">🧩 Maze Challenge 4</h4>
+                <p>هنا ممكن تعملي Challenge بينهم:</p>
+                <p><strong>"مين يقدر يوصل للهدف من غير ما يخبط في الحواجز؟"</strong></p>
+            </div>
+
+            <div class="maze-challenge">
+                <h4 style="color: #92400e;">🧩 Maze Challenge 5 🏆</h4>
+                <p>خليها أصعب واحدة.</p>
+                <p><strong>وقولي:</strong></p>
+                <ul class="example-list">
+                    <li>"آخر Challenge!"</li>
+                    <li>"مين يقدر يحل المتاهة دي؟"</li>
+                </ul>
+                <p>وخلي الأطفال يفكروا ويجربوا.</p>
+            </div>
         </div>
 
         <!-- القسم 7 -->
-        <div class="session-block">
+        <div class="session-block block-7">
             <div class="session-header">
                 <div class="session-number">7</div>
-                <div class="session-title">من 75–85 دقيقة — Challenge جماعي 🏆</div>
-                <div class="session-time">10 دقايق</div>
-            </div>
-            <div class="activity-box">
-                <p><strong>قولي:</strong> "مين يقدر يوصل الشخصية للهدف بأقل عدد من الأوامر؟"</p>
-            </div>
-            <p>خلي الأطفال يفكروا قبل ما يجربوا.</p>
-            <p>ولو طفل غلط، ما تقوليش: "غلط."</p>
-            <p><strong>قولي:</strong> "طب نجرب ونشوف إيه اللي حصل؟" وخلي الغلط جزء من التعلم.</p>
-        </div>
-
-        <!-- القسم 8 -->
-        <div class="session-block">
-            <div class="session-header">
-                <div class="session-number">8</div>
-                <div class="session-title">آخر 5 دقايق — مراجعة ⭐</div>
+                <div class="session-title">آخر 5 دقايق — نكتشف إننا كنا بنبرمج! 🤯💻</div>
                 <div class="session-time">5 دقايق</div>
             </div>
-            <p><strong>اسأليهم:</strong></p>
+            <div class="warning-box">
+                <p style="font-size: 1.2rem;"><strong>هنا أهم لحظة في السيشن.</strong></p>
+            </div>
+            <p style="font-size: 1.1rem;"><strong>بعد ما يخلصوا المتاهات، اسأليهم:</strong></p>
             <ul class="example-list">
-                <li>"يعني إيه Hardware؟"</li>
-                <li>"يعني إيه Software؟"</li>
-                <li>"يعني إيه Programming؟"</li>
-                <li>"الكمبيوتر بيخمن إحنا عايزين إيه؟"</li>
-                <li>"لو عايزين الكمبيوتر يعمل حاجة، نعمل إيه؟"</li>
+                <li>"طب إحنا عملنا إيه النهارده؟"</li>
+                <li>"إحنا كنا بنلعب بس؟"</li>
+            </ul>
+            <p>خليهم يجاوبوا.</p>
+            <div class="success-box">
+                <p style="font-size: 1.3rem;"><strong>"لأ! 😎"</strong></p>
+                <p style="font-size: 1.2rem;"><strong>"إحنا كنا بنبرمج!"</strong></p>
+            </div>
+            <p style="font-size: 1.1rem;"><strong>"إزاي؟"</strong></p>
+            <ul class="example-list">
+                <li>"إحنا كان عندنا Robot، وكان عنده مهمة."</li>
+                <li>"وإحنا فكرنا في الأوامر اللي تخليه ينفذ المهمة."</li>
+                <li>"رتبنا الأوامر."</li>
+                <li>"جربنا."</li>
+                <li>"ولو حصل خطأ، عدلنا الحل."</li>
             </ul>
             <div class="activity-box">
-                <p><strong>وفي الآخر قولي:</strong><br>
-                "النهارده إحنا عرفنا إن البرمجة هي إننا ندي الكمبيوتر أوامر، وبدأنا نجرب بنفسنا إزاي نخليه ينفذ الأوامر دي."</p>
+                <p style="font-size: 1.3rem; text-align: center;"><strong>"ودي بالظبط فكرة البرمجة! 🤖"</strong></p>
             </div>
         </div>
 
-        <!-- الملاحظات الختامية -->
-        <div class="final-notes">
-            <h2>🎯 الهدف من السيشن</h2>
-            <p>الهدف من السيشن مش إن الطفل يخلص عدد معين من مراحل Code.org.</p>
-            <p>الهدف إنه يخرج فاهم:</p>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
-                <span class="meta-badge">💻 الكمبيوتر</span>
-                <span class="meta-badge">🧩 Hardware / Software</span>
-                <span class="meta-badge">🤖 Instructions</span>
-                <span class="meta-badge">🧠 Programming</span>
-                <span class="meta-badge">🔢 Sequence</span>
-                <span class="meta-badge">🎮 Problem Solving</span>
+        <!-- مراجعة سريعة -->
+        <div class="review-section">
+            <h3>⭐ مراجعة سريعة:</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;"><strong>اسألي الأطفال:</strong></p>
+            <ul class="example-list">
+                <li> يعني إيه Programming؟</li>
+                <li>❓ لما يكون عندنا Robot وعايزينه يعمل حاجة، نعمل إيه؟</li>
+                <li>❓ هل ينفع ندي الروبوت أمر مش واضح؟</li>
+                <li>❓ هل ترتيب الأوامر مهم؟</li>
+                <li>❓ لو الحل ما اشتغلش من أول مرة، نعمل إيه؟</li>
+            </ul>
+            <div class="success-box" style="margin-top: 20px;">
+                <p style="font-size: 1.2rem; color: #065f46;"><strong>والإجابة الأخيرة مهمة جدًا:</strong></p>
+                <p style="font-size: 1.3rem; color: #065f46;"><strong>"نجرب تاني ونعدل الحل." ❤️</strong></p>
             </div>
-            <hr style="border-color: rgba(255,255,255,0.3); margin: 25px 0;">
-            <h3>وبعد السيشن دي، من الأسبوع اللي بعده:</h3>
-            <div class="next-steps">
-                <div class="step-card">👶 4–6 سنوات → Code.org</div>
-                <div class="step-card">👧 7–9 سنوات → ScratchJr</div>
-                <div class="step-card">👦 10–14 سنة → Scratch 3</div>
+        </div>
+
+        <!-- القسم النهائي -->
+        <div class="final-section">
+            <h2>🎯 في نهاية السيشن الطفل يكون فهم:</h2>
+            <div class="final-goals">
+                <span class="goal-badge">🤖 Robot</span>
+                <span class="goal-badge">🧠 Programming</span>
+                <span class="goal-badge">📋 Instructions / Commands</span>
+                <span class="goal-badge">🔢 Sequence</span>
+                <span class="goal-badge">🧩 Problem Solving</span>
+                <span class="goal-badge">🔄 Trial & Error</span>
             </div>
         </div>
 
         <footer>
-            <p>تم إعداد هذا المحتوى التعليمي بعناية لتبسيط مفاهيم البرمجة للأطفال 🌟 | Sunshine T. Academy</p>
+            <p>🌟 تم إعداد هذا المحتوى التعليمي بعناية لتبسيط مفاهيم البرمجة للأطفال 🌟</p>
+            <p>Sunshine T. Academy © 2026</p>
         </footer>
     </div>
 </body>
