@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غلاف - Sunshine T Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: white;
+            direction: rtl;
+        }
+
+        .cover-page {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-page::before {
+            content: "✨  ⭐ 💫 ✨  ⭐ 💫";
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            opacity: 0.3;
+            letter-spacing: 15px;
+            white-space: nowrap;
+        }
+
+        .cover-page::after {
+            content: "🚀 💡 🎯 🧠  💡 🎯 ";
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            opacity: 0.3;
+            letter-spacing: 15px;
+            white-space: nowrap;
+        }
+
+        .cover-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .cover-logo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: white;
+            padding: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 6px solid rgba(255,255,255,0.4);
+        }
+
+        .cover-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .cover-subtitle {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.95);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .cover-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+            font-size: 3.5rem;
+        }
+
+        .cover-icon {
+            animation: bounce 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        .cover-icon:nth-child(2) { animation-delay: 0.2s; }
+        .cover-icon:nth-child(3) { animation-delay: 0.4s; }
+        .cover-icon:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .cover-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.2);
+            padding: 25px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 200px;
+        }
+
+        .info-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .info-value {
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+
+        .cover-footer {
+            margin-top: 60px;
+            padding-top: 35px;
+            border-top: 3px solid rgba(255,255,255,0.3);
+        }
+
+        .academy-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .academy-slogan {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+        }
+
+        @media print {
+            .cover-page {
+                min-height: 100vh;
+                page-break-after: always;
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-page">
+        <div class="cover-content">
+            <div class="logo-container">
+                <img src="https://sunshinetacademy.github.io/Word_luc_01/logo.png" alt="Sunshine T Academy Logo" class="cover-logo">
+            </div>
+            
+            <h1 class="cover-title">سيشن تجريبية</h1>
+            <h2 class="cover-subtitle">Introduction to Programming</h2>
+            
+            <div class="cover-icons">
+                <span class="cover-icon">🤖</span>
+                <span class="cover-icon">💻</span>
+                <span class="cover-icon"></span>
+                <span class="cover-icon">🧩</span>
+            </div>
+            
+            <div class="cover-info">
+                <div class="info-box">
+                    <span class="info-label">👧👦 السن</span>
+                    <span class="info-value">4–14 سنة</span>
+                </div>
+                <div class="info-box">
+                    <span class="info-label">⏱️ المدة</span>
+                    <span class="info-value">ساعة واحدة</span>
+                </div>
+            </div>
+            
+            <div class="cover-footer">
+                <p class="academy-name">Sunshine T Academy</p>
+                <p class="academy-slogan">بنحول الحلم لكود</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
