@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيشن تجريبية — Introduction to Programming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50E3C2;
+            --accent-color: #F5A623;
+            --bg-color: #F9FAFB;
+            --text-color: #333333;
+            --card-bg: #FFFFFF;
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .meta-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .goal-section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            border-right: 5px solid var(--accent-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .goal-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .goal-section ul {
+            list-style-type: none;
+            padding-right: 0;
+        }
+
+        .goal-section li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-right: 30px;
+            font-weight: 600;
+        }
+
+        .goal-section li::before {
+            content: "💡";
+            position: absolute;
+            right: 0;
+        }
+
+        .session-block {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .session-block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .session-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .session-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .session-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            flex-grow: 1;
+        }
+
+        .session-time {
+            background: #E3F2FD;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .activity-box {
+            background: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .activity-box h4 {
+            color: #0369A1;
+            margin-bottom: 10px;
+        }
+
+        .example-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .example-list li {
+            background: #F8FAFC;
+            margin: 6px 0;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border-right: 4px solid var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .highlight {
+            background: #FEF3C7;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: #92400E;
+        }
+
+        .final-notes {
+            background: linear-gradient(135deg, #10B981, #34D399);
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .final-notes h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .next-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .step-card {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            font-weight: 700;
+            min-width: 220px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            .session-header { flex-direction: column; align-items: flex-start; }
+            .session-time { margin-top: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 سيشن تجريبية — Introduction to Programming</h1>
+            <div class="meta-info">
+                <span class="meta-badge">👧👦 السن: 4–9 سنوات</span>
+                <span class="meta-badge">⏱️ المدة: ساعة ونصف</span>
+            </div>
+        </header>
+
+        <div class="goal-section">
+            <h2>🎯 الهدف:</h2>
+            <p>الطفل يخرج فاهم بشكل بسيط:</p>
+            <ul>
+                <li>يعني إيه Computer؟</li>
+                <li>يعني إيه Hardware؟</li>
+                <li>يعني إيه Software؟</li>
+                <li>يعني إيه Programming؟</li>
+                <li>يعني إيه Instructions / Commands؟</li>
+                <li>إن الكمبيوتر بينفذ الأوامر اللي إحنا بنديهاله.</li>
+            </ul>
+        </div>
+
+        <!-- القسم 1 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">1</div>
+                <div class="session-title">أول 10 دقايق — تعارف وفتح الموضوع 💻</div>
+                <div class="session-time">10 دقايق</div>
+            </div>
+            <p><strong>اسألي الأطفال:</strong></p>
+            <ul class="example-list">
+                <li>"مين بيستخدم الكمبيوتر؟"</li>
+                <li>"بتستخدموه في إيه؟"</li>
+                <li>"مين بيحب الألعاب؟ 🎮"</li>
+                <li>"مين نفسه يعمل لعبة بنفسه؟"</li>
+            </ul>
+            <div class="activity-box">
+                <p><strong>وبعدين قولي:</strong><br>
+                "النهارده هنكتشف الكمبيوتر بيفهمنا إزاي، وإزاي نقدر نخليه يعمل اللي إحنا عايزينه."</p>
+            </div>
+        </div>
+
+        <!-- القسم 2 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">2</div>
+                <div class="session-title">من 10–20 دقيقة — Hardware vs Software</div>
+                <div class="session-time">10 دقايق</div>
+            </div>
+            <p><strong>اعملي لعبة حركة:</strong></p>
+            <p>قولي: "أنا هقول حاجة، لو هي حاجة نقدر نمسكها → نروح ناحية اليمين. ولو برنامج → نروح ناحية الشمال."</p>
+            <div class="activity-box">
+                <h4>أمثلة:</h4>
+                <ul class="example-list">
+                    <li>🖱️ Mouse → <span class="highlight">Hardware</span></li>
+                    <li>⌨️ Keyboard → <span class="highlight">Hardware</span></li>
+                    <li>🖥️ Screen → <span class="highlight">Hardware</span></li>
+                    <li>🎮 Game → <span class="highlight">Software</span></li>
+                    <li>🎨 Drawing App → <span class="highlight">Software</span></li>
+                    <li>🧮 Calculator App → <span class="highlight">Software</span></li>
+                </ul>
+            </div>
+            <p><strong>بعد اللعبة قولي:</strong></p>
+            <ul class="example-list">
+                <li><strong>Hardware</strong> = الحاجات اللي نقدر نمسكها.</li>
+                <li><strong>Software</strong> = البرامج اللي بتشتغل على الكمبيوتر.</li>
+            </ul>
+        </div>
+
+        <!-- القسم 3 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">3</div>
+                <div class="session-title">من 20–35 دقيقة — لعبة الـ Robot 🤖</div>
+                <div class="session-time">15 دقيقة</div>
+            </div>
+            <p>اختاري طفل يكون <strong>Robot</strong> وطفل يكون <strong>Programmer</strong>.</p>
+            <div class="activity-box">
+                <p><strong>قولي للـ Programmer:</strong><br>
+                "ممنوع تقول للـ Robot: روح هناك. لازم تديله أوامر واضحة."</p>
+                <p><strong>مثلاً:</strong><br>
+                ➡️ خطوة لقدام<br>
+                ➡️ خطوة لقدام<br>
+                ↩️ لف يمين<br>
+                ➡️ خطوة<br>
+                🛑 Stop</p>
+            </div>
+            <p>لو الأمر مش واضح، الـ Robot ما ينفذش.</p>
+            <p><strong>بعدها قولي:</strong> "شايفين؟ الكمبيوتر مش بيخمن إحنا عايزين إيه. لازم نديله Instructions واضحة."</p>
+            <p><strong>وهنا عرفيهم:</strong> <span class="highlight">Programming</span> = إننا بندي الكمبيوتر أوامر عشان يعمل حاجة معينة.</p>
+        </div>
+
+        <!-- القسم 4 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">4</div>
+                <div class="session-title">من 35–45 دقيقة — Sequence 🔢</div>
+                <div class="session-time">10 دقايق</div>
+            </div>
+            <p><strong>اعملي نشاط ترتيب.</strong></p>
+            <div class="activity-box">
+                <p>مثلاً صور: 🍎 → 🥣 → 🥛 → 🍽️</p>
+                <p><strong>واسألي:</strong> "مين يرتب الخطوات بالترتيب الصح؟"</p>
+            </div>
+            <p><strong>وبعدين قولي:</strong> "في البرمجة ترتيب الأوامر مهم جدًا. لو غيرنا الترتيب، ممكن النتيجة تطلع غلط."</p>
+            <p>ودي اسمها: <span class="highlight">Sequence</span> = ترتيب الأوامر.</p>
+        </div>
+
+        <!-- القسم 5 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">5</div>
+                <div class="session-title">من 45–55 دقيقة — ننتقل للكمبيوتر 💻</div>
+                <div class="session-time">10 دقايق</div>
+            </div>
+            <div class="activity-box">
+                <p><strong>قولي:</strong> "طيب بدل ما أنا أكون الـ Robot... خلينا نخلي الكمبيوتر هو الـ Robot!"</p>
+            </div>
+            <p>افتحي <strong>Code.org</strong>.</p>
+            <p>وريهم الـ Blocks وقولي: "كل Block هنا عبارة عن أمر."</p>
+            <p>اختاري Challenge بسيط جدًا.</p>
+            <p>قبل ما تحطي الـ Blocks اسأليهم: "الشخصية محتاجة تعمل إيه عشان توصل؟"</p>
+            <p>خلي الأطفال يقولوا الأوامر الأول. وبعدين حطي الـ Blocks وشغليها.</p>
+        </div>
+
+        <!-- القسم 6 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">6</div>
+                <div class="session-title">من 55–75 دقيقة — Code.org Activity 🎮</div>
+                <div class="session-time">20 دقيقة</div>
+            </div>
+            <p>خلي كل طفل يجرب أول مراحل بسيطة. ما تشرحيش كل حاجة مرة واحدة.</p>
+            <div class="activity-box">
+                <h4>كل Challenge:</h4>
+                <ol style="padding-right: 20px; line-height: 2;">
+                    <li>خلي الطفل يشوف المطلوب.</li>
+                    <li>اسأليه: "إحنا محتاجين نعمل إيه؟"</li>
+                    <li>خليه يقترح الأوامر.</li>
+                    <li>ساعديه يحط الـ Blocks.</li>
+                    <li>شغّلوا الحل.</li>
+                    <li>اسأليه: "إيه اللي حصل؟ وليه؟"</li>
+                </ol>
+            </div>
+            <p><strong>ركزي على:</strong> ➡️ Sequence | ➡️ Commands | ➡️ Problem Solving</p>
+        </div>
+
+        <!-- القسم 7 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">7</div>
+                <div class="session-title">من 75–85 دقيقة — Challenge جماعي 🏆</div>
+                <div class="session-time">10 دقايق</div>
+            </div>
+            <div class="activity-box">
+                <p><strong>قولي:</strong> "مين يقدر يوصل الشخصية للهدف بأقل عدد من الأوامر؟"</p>
+            </div>
+            <p>خلي الأطفال يفكروا قبل ما يجربوا.</p>
+            <p>ولو طفل غلط، ما تقوليش: "غلط."</p>
+            <p><strong>قولي:</strong> "طب نجرب ونشوف إيه اللي حصل؟" وخلي الغلط جزء من التعلم.</p>
+        </div>
+
+        <!-- القسم 8 -->
+        <div class="session-block">
+            <div class="session-header">
+                <div class="session-number">8</div>
+                <div class="session-title">آخر 5 دقايق — مراجعة ⭐</div>
+                <div class="session-time">5 دقايق</div>
+            </div>
+            <p><strong>اسأليهم:</strong></p>
+            <ul class="example-list">
+                <li>"يعني إيه Hardware؟"</li>
+                <li>"يعني إيه Software؟"</li>
+                <li>"يعني إيه Programming؟"</li>
+                <li>"الكمبيوتر بيخمن إحنا عايزين إيه؟"</li>
+                <li>"لو عايزين الكمبيوتر يعمل حاجة، نعمل إيه؟"</li>
+            </ul>
+            <div class="activity-box">
+                <p><strong>وفي الآخر قولي:</strong><br>
+                "النهارده إحنا عرفنا إن البرمجة هي إننا ندي الكمبيوتر أوامر، وبدأنا نجرب بنفسنا إزاي نخليه ينفذ الأوامر دي."</p>
+            </div>
+        </div>
+
+        <!-- الملاحظات الختامية -->
+        <div class="final-notes">
+            <h2>🎯 الهدف من السيشن</h2>
+            <p>الهدف من السيشن مش إن الطفل يخلص عدد معين من مراحل Code.org.</p>
+            <p>الهدف إنه يخرج فاهم:</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                <span class="meta-badge">💻 الكمبيوتر</span>
+                <span class="meta-badge">🧩 Hardware / Software</span>
+                <span class="meta-badge">🤖 Instructions</span>
+                <span class="meta-badge">🧠 Programming</span>
+                <span class="meta-badge">🔢 Sequence</span>
+                <span class="meta-badge">🎮 Problem Solving</span>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.3); margin: 25px 0;">
+            <h3>وبعد السيشن دي، من الأسبوع اللي بعده:</h3>
+            <div class="next-steps">
+                <div class="step-card">👶 4–6 سنوات → Code.org</div>
+                <div class="step-card">👧 7–9 سنوات → ScratchJr</div>
+                <div class="step-card">👦 10–14 سنة → Scratch 3</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>تم إعداد هذا المحتوى التعليمي بعناية لتبسيط مفاهيم البرمجة للأطفال 🌟 | Sunshine T. Academy</p>
+        </footer>
+    </div>
+</body>
+</html>
