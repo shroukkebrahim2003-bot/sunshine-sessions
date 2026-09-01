@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Programming Mission - Sunshine T Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(180deg, #FFF5E6 0%, #FFE4CC 100%);
+            color: #4A4A4A;
+            line-height: 2;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 5px solid #FFE4B5;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 4px dashed #FFE4B5;
+        }
+
+        .logo-small {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 4px solid #FFE4B5;
+            padding: 10px;
+            background: white;
+        }
+
+        .header h1 {
+            color: #5A4A42;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .header h2 {
+            color: #8B7355;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .name-section {
+            background: #FFF8E7;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-right: 5px solid #FFB347;
+        }
+
+        .name-line {
+            display: inline-block;
+            width: 300px;
+            border-bottom: 3px dotted #8B7355;
+            margin-right: 10px;
+        }
+
+        .section {
+            background: linear-gradient(135deg, #FFF8E7 0%, #FFE4CC 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-right: 6px solid #FFB347;
+        }
+
+        .section-title {
+            color: #5A4A42;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            font-size: 1.15rem;
+            line-height: 2.2;
+            color: #4A4A4A;
+        }
+
+        .example-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 3px solid #FFE4B5;
+        }
+
+        .command-list {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .command-list li {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            margin: 10px 0;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-right: 5px solid #66BB6A;
+        }
+
+        .wrong-command {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%) !important;
+            border-right: 5px solid #EF5350 !important;
+        }
+
+        .flow-diagram {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFE4B5 0%, #FFB347 100%);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .flow-arrow {
+            display: block;
+            font-size: 2rem;
+            color: #FFB347;
+            margin: 5px 0;
+        }
+
+        .maze-section {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin: 35px 0;
+            border: 4px solid;
+            text-align: center;
+        }
+
+        .maze-1 { border-color: #66BB6A; }
+        .maze-2 { border-color: #42A5F5; }
+        .maze-3 { border-color: #FFA726; }
+        .maze-4 { border-color: #EC407A; }
+        .maze-5 { border-color: #AB47BC; }
+
+        .maze-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #5A4A42;
+        }
+
+        .maze-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin: 20px 0;
+        }
+
+        .review-section {
+            background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%);
+            padding: 35px;
+            border-radius: 20px;
+            margin: 35px 0;
+            border-right: 6px solid #FBC02D;
+        }
+
+        .question-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-right: 4px solid #FBC02D;
+        }
+
+        .answer-line {
+            display: block;
+            width: 100%;
+            height: 40px;
+            border-bottom: 2px dotted #8B7355;
+            margin: 10px 0;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .checkbox {
+            width: 25px;
+            height: 25px;
+            border: 3px solid #8B7355;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .success-section {
+            background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+            padding: 35px;
+            border-radius: 20px;
+            margin: 35px 0;
+            text-align: center;
+            border: 4px solid #66BB6A;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #2E7D32;
+            margin-bottom: 25px;
+        }
+
+        .checklist {
+            list-style: none;
+            text-align: right;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .checklist li {
+            background: white;
+            padding: 15px 20px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .checkbox-large {
+            width: 30px;
+            height: 30px;
+            border: 3px solid #66BB6A;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .final-message {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #5A4A42;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #FFE4B5 0%, #FFB347 100%);
+            border-radius: 20px;
+        }
+
+        .remember-section {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 35px 0;
+            border-right: 6px solid #42A5F5;
+        }
+
+        .remember-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #1565C0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .remember-flow {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .remember-step {
+            background: white;
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 8px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 4px dashed #FFE4B5;
+        }
+
+        .footer-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            font-size: 1.3rem;
+            color: #8B7355;
+            font-weight: 700;
+        }
+
+        .divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #FFE4B5, transparent);
+            margin: 30px 0;
+            border-radius: 2px;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .container {
+                box-shadow: none;
+                border: 2px solid #FFE4B5;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            .header h1 { font-size: 1.6rem; }
+            .section { padding: 20px; }
+            .maze-section { padding: 25px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://sunshinetacademy.github.io/Word_luc_01/logo.png" alt="Sunshine T Academy" class="logo-small">
+            <h1> SUNSHINE T ACADEMY</h1>
+            <h2>🤖 MY FIRST PROGRAMMING MISSION</h2>
+        </div>
+
+        <!-- Name Section -->
+        <div class="name-section">
+            <strong>👤 Name:</strong> <span class="name-line"></span>
+        </div>
+
+        <!-- What is Programming -->
+        <div class="section">
+            <h3 class="section-title">🧠 WHAT IS PROGRAMMING?</h3>
+            <div class="section-content">
+                <p>البرمجة ببساطة هي إننا ندي الكمبيوتر أو الروبوت مجموعة من الأوامر عشان ينفذ مهمة معينة.</p>
+                
+                <div class="example-box">
+                    <p style="font-size: 1.2rem; font-weight: 800; margin-bottom: 15px;">🤖 مثال:</p>
+                    <p>تخيل إن عندنا Robot 🤖 وعايزينه يوصل للنجمة ⭐</p>
+                    <p style="margin-top: 15px;">مش هنقول له:</p>
+                    <ul class="command-list">
+                        <li class="wrong-command">❌ "روح للنجمة!"</li>
+                    </ul>
+                    <p style="margin-top: 15px;">لازم نديه أوامر واضحة:</p>
+                    <ul class="command-list">
+                        <li>🟢 When Green Flag Clicked</li>
+                        <li>⬆️ Forward</li>
+                        <li>⬆️ Forward</li>
+                        <li>↩️ Turn</li>
+                        <li>️ Forward</li>
+                        <li> Stop</li>
+                    </ul>
+                </div>
+
+                <p>الروبوت هينفذ الأوامر اللي إحنا اديناهاله.</p>
+                
+                <div class="flow-diagram">
+                    <p style="font-weight: 700; margin-bottom: 15px;">يعني:</p>
+                    <div class="flow-step">🧠 أنا بفكر في الحل</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">📋 أرتب الأوامر</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step"> الروبوت ينفذ</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">⭐ يوصل للهدف</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sequence Section -->
+        <div class="section">
+            <h3 class="section-title">🔢 SEQUENCE</h3>
+            <div class="section-content">
+                <p style="font-size: 1.2rem;"><strong>يعني إيه Sequence؟</strong></p>
+                <p style="font-size: 1.15rem; margin: 15px 0;"><strong>Sequence = ترتيب الأوامر بالترتيب الصحيح.</strong></p>
+                <p style="font-size: 1.2rem; color: #E53935; font-weight: 800;">لأن ترتيب الأوامر مهم جدًا! 🔢</p>
+                <p style="margin-top: 15px;">لو غيرنا ترتيب الخطوات، ممكن الروبوت ما يوصلش للهدف.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Maze Challenge 1 -->
+        <div class="maze-section maze-1">
+            <h3 class="maze-title"> MAZE CHALLENGE 1</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">ساعد الروبوت يوصل للهدف! ⭐</p>
+            <img src="Screenshot%20(426).png" alt="Maze Challenge 1" class="maze-image">
+        </div>
+
+        <!-- Maze Challenge 2 -->
+        <div class="maze-section maze-2">
+            <h3 class="maze-title"> MAZE CHALLENGE 2</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">حان وقت تحدي جديد! 🚀</p>
+            <img src="Screenshot%20(427).png" alt="Maze Challenge 2" class="maze-image">
+        </div>
+
+        <!-- Maze Challenge 3 -->
+        <div class="maze-section maze-3">
+            <h3 class="maze-title">🤖 MAZE CHALLENGE 3</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">هل تستطيع حل المتاهة؟ 🧩</p>
+            <img src="Screenshot%20(428).png" alt="Maze Challenge 3" class="maze-image">
+        </div>
+
+        <!-- Maze Challenge 4 -->
+        <div class="maze-section maze-4">
+            <h3 class="maze-title">🤖 MAZE CHALLENGE 4</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Challenge Time! 🏆</p>
+            <img src="Screenshot%20(429).png" alt="Maze Challenge 4" class="maze-image">
+        </div>
+
+        <!-- Maze Challenge 5 -->
+        <div class="maze-section maze-5">
+            <h3 class="maze-title">🤖 MAZE CHALLENGE 5</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 20px; font-weight: 800; color: #E53935;"> FINAL CHALLENGE 🔥</p>
+            <img src="Screenshot%20(430).png" alt="Maze Challenge 5" class="maze-image">
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Review Section -->
+        <div class="review-section">
+            <h3 class="section-title">⭐ WHAT DID I LEARN?</h3>
+            <p style="font-size: 1.15rem; margin-bottom: 25px;">بعد السيشن، حاول تفتكر:</p>
+            
+            <div class="question-box">
+                <p style="font-weight: 700; font-size: 1.1rem;">❓ يعني إيه Programming؟</p>
+                <span class="answer-line"></span>
+                <span class="answer-line"></span>
+            </div>
+
+            <div class="question-box">
+                <p style="font-weight: 700; font-size: 1.1rem;">❓ لما نريد أن نجعل الـ Robot يعمل مهمة، ماذا نعطيه؟</p>
+                <span class="answer-line"></span>
+                <span class="answer-line"></span>
+            </div>
+
+            <div class="question-box">
+                <p style="font-weight: 700; font-size: 1.1rem;">❓ هل ترتيب الأوامر مهم؟</p>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <span class="checkbox"></span>
+                        <span>نعم</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <span class="checkbox"></span>
+                        <span>لا</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p style="font-weight: 700; font-size: 1.1rem;">❓ لو الحل لم يعمل من أول مرة، ماذا نفعل؟</p>
+                <span class="answer-line"></span>
+                <span class="answer-line"></span>
+            </div>
+        </div>
+
+        <!-- Success Section -->
+        <div class="success-section">
+            <h3 class="success-title">🎉 GREAT JOB!</h3>
+            <p style="font-size: 1.3rem; margin-bottom: 25px; font-weight: 700;">أنا النهارده:</p>
+            <ul class="checklist">
+                <li><span class="checkbox-large">☑</span> فكرت في الحل</li>
+                <li><span class="checkbox-large">☑</span> رتبت الأوامر</li>
+                <li><span class="checkbox-large">☑</span> أعطيت Instructions للـ Robot</li>
+                <li><span class="checkbox-large">☑</span> جربت الحل</li>
+                <li><span class="checkbox-large">☑</span> عدلت أخطائي</li>
+            </ul>
+        </div>
+
+        <!-- Final Message -->
+        <div class="final-message">
+            💻 I AM A LITTLE PROGRAMMER! 🚀
+        </div>
+
+        <!-- Remember Section -->
+        <div class="remember-section">
+            <h3 class="remember-title"> REMEMBER</h3>
+            <div class="remember-flow">
+                <p style="font-size: 1.3rem; margin-bottom: 20px;"><strong>Programming =</strong></p>
+                <div class="remember-step">🧠 Think</div>
+                <div class="flow-arrow">↓</div>
+                <div class="remember-step">📋 Plan</div>
+                <div class="flow-arrow">↓</div>
+                <div class="remember-step">🤖 Give Commands</div>
+                <div class="flow-arrow">↓</div>
+                <div class="remember-step">▶️ Try</div>
+                <div class="flow-arrow">↓</div>
+                <div class="remember-step">🔄 Fix</div>
+                <div class="flow-arrow">↓</div>
+                <div class="remember-step">⭐ Success!</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="https://sunshinetacademy.github.io/Word_luc_01/logo.png" alt="Sunshine T Academy" class="footer-logo">
+            <p class="footer-text"> SUNSHINE T ACADEMY</p>
+            <p style="font-size: 1.2rem; color: #8B7355; font-weight: 600; margin-top: 10px;">💻 Let's Learn • Let's Create • Let's Code 🚀</p>
+        </div>
+    </div>
+</body>
+</html>
