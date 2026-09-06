@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loops - Sunshine T Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,8 +13,10 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Cairo', 'Arial', sans-serif;
             background: white;
+            direction: rtl;
+            text-align: right;
         }
 
         .page {
@@ -22,8 +25,11 @@
             padding: 20mm;
             page-break-after: always;
             position: relative;
+            direction: rtl;
+            text-align: right;
         }
 
+        /* صفحة الغلاف */
         .cover-page {
             display: flex;
             flex-direction: column;
@@ -66,8 +72,11 @@
             margin-top: 10px;
         }
 
+        /* صفحة المحتوى */
         .content-page {
             background: white;
+            direction: rtl;
+            text-align: right;
         }
 
         .content-title {
@@ -78,6 +87,7 @@
             font-weight: bold;
             border-bottom: 3px solid #f5a623;
             padding-bottom: 15px;
+            direction: ltr;
         }
 
         .content-item {
@@ -85,7 +95,9 @@
             font-size: 22px;
             color: #333;
             line-height: 1.8;
-            padding-right: 10px;
+            padding-right: 20px;
+            direction: rtl;
+            text-align: right;
         }
 
         .content-item::before {
@@ -96,12 +108,16 @@
             margin-left: 10px;
         }
 
+        .content-item strong {
+            color: #1a3a6b;
+        }
+
         .code-example {
             background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
             border: 3px solid #1a3a6b;
             border-radius: 15px;
             padding: 25px;
-            margin: 25px 20px;
+            margin: 25px 40px;
             font-family: 'Courier New', monospace;
             font-size: 20px;
             direction: ltr;
@@ -164,7 +180,7 @@
 
         <div class="code-example">
             <div class="code-block">repeat 5</div>
-            <div class="code-line">&nbsp;&nbsp;W ←</div>
+            <div class="code-line">&nbsp;&nbsp;W &larr;</div>
         </div>
 
         <div class="content-item">
@@ -173,8 +189,8 @@
 
         <div class="code-example">
             <div class="code-block">repeat 5</div>
-            <div class="code-line">&nbsp;&nbsp;W ←</div>
-            <div class="code-line">&nbsp;&nbsp;N ↑</div>
+            <div class="code-line">&nbsp;&nbsp;W &larr;</div>
+            <div class="code-line">&nbsp;&nbsp;N &uarr;</div>
         </div>
     </div>
 </body>
