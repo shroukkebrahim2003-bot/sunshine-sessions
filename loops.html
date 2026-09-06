@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops - Sunshine T Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            page-break-after: always;
+            position: relative;
+        }
+
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffffff 0%, #e8f4f8 100%);
+            border: 3px solid #1a3a6b;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 200px;
+            height: auto;
+        }
+
+        .robot-image {
+            margin: 20px 0;
+        }
+
+        .robot-image img {
+            width: 400px;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .cover-title {
+            font-size: 48px;
+            color: #1a3a6b;
+            font-weight: bold;
+            margin: 30px 0 10px 0;
+        }
+
+        .cover-subtitle {
+            font-size: 24px;
+            color: #f5a623;
+            margin-top: 10px;
+        }
+
+        .content-page {
+            background: white;
+        }
+
+        .content-title {
+            font-size: 36px;
+            color: #1a3a6b;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 15px;
+        }
+
+        .content-item {
+            margin-bottom: 25px;
+            font-size: 22px;
+            color: #333;
+            line-height: 1.8;
+            padding-right: 10px;
+        }
+
+        .content-item::before {
+            content: "• ";
+            color: #f5a623;
+            font-weight: bold;
+            font-size: 28px;
+            margin-left: 10px;
+        }
+
+        .code-example {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            border: 3px solid #1a3a6b;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            direction: ltr;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-block {
+            color: #1a3a6b;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .code-line {
+            color: #2c5f8d;
+            margin: 5px 0;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .page {
+                page-break-after: always;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- صفحة الغلاف -->
+    <div class="page cover-page">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Sunshine T Academy Logo">
+        </div>
+        
+        <div class="robot-image">
+            <img src="robot.png" alt="Robot with Computer">
+        </div>
+        
+        <h1 class="cover-title">Loops</h1>
+        <p class="cover-subtitle">Sunshine T Academy</p>
+        <p style="color: #1a3a6b; margin-top: 10px; font-size: 18px;">بنحول الحلم لكود</p>
+    </div>
+
+    <!-- صفحة المحتوى -->
+    <div class="page content-page">
+        <h1 class="content-title">Loops</h1>
+        
+        <div class="content-item">
+            <strong>Loop:</strong> تستخدم عند تكرار الكود البرمجي أكثر من مرة لتقليل الأوامر المستخدمة في الكود.
+        </div>
+
+        <div class="content-item">
+            يمكن أن تستخدم لتكرار أمر واحد
+        </div>
+
+        <div class="code-example">
+            <div class="code-block">repeat 5</div>
+            <div class="code-line">&nbsp;&nbsp;W ←</div>
+        </div>
+
+        <div class="content-item">
+            أو تكرار أكثر من أمر معاً
+        </div>
+
+        <div class="code-example">
+            <div class="code-block">repeat 5</div>
+            <div class="code-line">&nbsp;&nbsp;W ←</div>
+            <div class="code-line">&nbsp;&nbsp;N ↑</div>
+        </div>
+    </div>
+</body>
+</html>
